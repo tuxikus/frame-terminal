@@ -684,6 +684,28 @@ static const uint8_t nine[64] = {
 
 // symbols
 
+static const uint8_t space[64] = {
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0
+};
+
+static const uint8_t newline[64] = {
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0
+};
+
 static const uint8_t exclamationMark[64] = {
   0,0,0,1,1,0,0,0,
   0,0,0,1,1,0,0,0,
@@ -1177,7 +1199,17 @@ const uint8_t *getCharacterBitmap(char characater)
     case '9':
       return nine;
 
-      // symbols
+      // space stuff
+    case ' ':
+      return space;
+    case '\t':
+      return space;
+    case '\r':
+      return space;
+    case '\n':
+      return space;
+
+    // symbols
     case '!':
       return exclamationMark;
     case '"':
